@@ -1,0 +1,66 @@
+.delete-button {
+background-color: rgb(245, 245, 245);
+color: rgb(5, 5, 5);
+border: none;
+border-radius: 5px;
+padding: 4px 8px;
+cursor: pointer;
+position: relative;
+overflow: hidden;
+}
+
+.delete-button:before {
+content: "Oops!";
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgb(235, 227, 237);
+transform: translateX(-100%);
+transition: transform 0.3s ease-out;
+}
+
+.delete-button:hover:before {
+transform: translateX(0);
+}
+
+.delete-button:active:before {
+transform: translateX(100%);
+}
+body{
+    color: rgb(249, 243, 243);
+background-color: rgb(0, 0, 0);
+}
+.container {
+background-image:url(3.png);
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+max-width: 1900px;
+margin: 0 auto;
+padding: 40px;
+box-sizing: border-box;
+}
+.recipe-card {
+    color: beige;
+    font-family: cursive;
+    font-size: 20px;
+border: 3px solid rgb(0, 0, 0);
+border-radius: 4px;
+overflow: hidden;
+}
+.fcc-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 60px 70px;
+    padding: 15px 25px;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .fcc-btn:hover {
+    background-color: #010324;
+  }

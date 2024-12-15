@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+   <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mb-5" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;font-size: 50px;"><center>*Welcome To Recipe Book*</center></h1>
+        <div class="row">
+            {% for recipe in recipes %}
+            <div class="col-md-6">
+                <div class="recipe-card p-4 mb-4">
+                    <h2 class="mb-3">{{ recipe[1] }}</h2>
+                    <p><strong>Ingredients:</strong> {{ recipe[2] }}</p>
+                    <p><strong>Instructions:</strong> {{ recipe[3] }}</p>
+                    <center>
+                    <a class="delete-button" href="{{ url_for('delete_recipe', id=recipe[0]) }}">Delete</a>
+                    </center>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a class="fcc-btn" href="{{ url_for('add_recipe') }}">Add Recipe</a>
+        <a class="fcc-btn" href="{{ url_for('search_recipe') }}">Search Recipe</a>
+    </div>
+</body>
+</html>
